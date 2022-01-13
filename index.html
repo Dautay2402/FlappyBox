@@ -110,19 +110,19 @@ function updateGameArea() {
     }
     myGameArea.clear();
     myGameArea.frameNo += 1;
-    if (myGameArea.frameNo == 1 || everyinterval(60)) {
+    if (myGameArea.frameNo == 1 || everyinterval(50)) {
         x = myGameArea.canvas.width;
         minHeight = 30;
         maxHeight = 200;
         height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
-        minGap = 50;
+        minGap = 70;
         maxGap = 200;
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-        myObstacles.push(new component(20, height, "green", x, 0));
-        myObstacles.push(new component(20, x - height - gap, "green", x, height + gap));
+        myObstacles.push(new component(35, height, "green", x, 0));
+        myObstacles.push(new component(35, x - height - gap, "green", x, height + gap));
     }
     for (i = 0; i < myObstacles.length; i += 1) {
-        myObstacles[i].speedX = -5;
+        myObstacles[i].speedX = -6;
         myObstacles[i].newPos();
         myObstacles[i].update();
     }
@@ -152,6 +152,7 @@ function everyinterval(n) {
 
 <p>Dùng 4 nút điều khiển trên bàn phím để sống lâu nhất có thể</p>
 <p>Bấm F5 để chơi lại. Trình của Dev đang gà :) Không biết cách làm nút play again. Đừng chửi Dev :)) </p>
+<p>Chúc các bạn chơi game vui vẻ </p>
 <p>Powered by: Nguyễn Duy Ngọc </p>
 </body>
 </html>
