@@ -2,8 +2,10 @@
 <html>
 <head>
 <title>FlappyBox</title>
+<link rel="stylesheet" href="main.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <style>
+
 canvas {
     border:1px solid #d3d3d3;
     background-color: #f1f1f1;
@@ -18,7 +20,7 @@ var myObstacles = [];
 var myScore;
 
 function startGame() {
-    myGamePiece = new component(30, 30, "red", 10, 120);
+    myGamePiece = new component(25, 25, "red", 10, 120);
     myScore = new component("30px", "Consolas", "black", 280, 40, "text");
     myGameArea.start();
 }
@@ -116,8 +118,8 @@ function updateGameArea() {
         minGap = 50;
         maxGap = 200;
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-        myObstacles.push(new component(10, height, "green", x, 0));
-        myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+        myObstacles.push(new component(20, height, "green", x, 0));
+        myObstacles.push(new component(20, x - height - gap, "green", x, height + gap));
     }
     for (i = 0; i < myObstacles.length; i += 1) {
         myObstacles[i].speedX = -5;
@@ -141,7 +143,7 @@ function everyinterval(n) {
 
 
 </script>
-<div style="text-align:center;width:480px;">
+<div class = "button" style="text-align:center;width:480px;" >
   <button onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()">UP</button><br><br>
   <button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()">LEFT</button>
   <button onmousedown="moveright()" onmouseup="clearmove()" ontouchstart="moveright()">RIGHT</button><br><br>
@@ -149,8 +151,7 @@ function everyinterval(n) {
 </div>
 
 <p>Dùng 4 nút điều khiển trên bàn phím để sống lâu nhất có thể</p>
-<p>Bấm F5 để chơi lại. Trình của Dev đang gà :) Không biết cách làm nút play again </p>
-<p>Chúc các bạn chơi game vui vẻ </p>
-<p>Powered by: Nguyễn Duy Ngọc</p>
+<p>Bấm F5 để chơi lại. Trình của Dev đang gà :) Không biết cách làm nút play again. Đừng chửi Dev :)) </p>
+<p>Powered by: Nguyễn Duy Ngọc </p>
 </body>
 </html>
