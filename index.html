@@ -53,6 +53,9 @@ this.newPos = function() {
     this.y += this.speedY;
     this.hitBottom();
   }
+        function tai_lai_trang(){
+            location.reload();
+        }
 function component(width, height, color, x, y, type) {
     this.type = type;
     this.width = width;
@@ -101,6 +104,10 @@ function component(width, height, color, x, y, type) {
         if (this.x + (this.width)==0){
             crash= true;
         }
+        if (crash==true ){
+            alert("You lose, noob" + "\nYour " + myScore.text +"\nDare to try again ?");
+            location.reload();
+        }
         return crash;
     }
 }
@@ -115,7 +122,7 @@ function updateGameArea() {
     }
     myGameArea.clear();
     myGameArea.frameNo += 1;
-    if (myGameArea.frameNo == 1 || everyinterval(60)) {
+    if (myGameArea.frameNo == 1 || everyinterval(50)) {
         x = myGameArea.canvas.width;
         minHeight = 30;
         maxHeight = 200;
@@ -156,7 +163,6 @@ function everyinterval(n) {
 </div>
 
 <p>Dùng 4 nút điều khiển trên bàn phím để sống lâu nhất có thể</p>
-<p>Bấm F5 để chơi lại. Trình của Dev đang gà :) Không biết cách làm nút play again. Đừng chửi Dev :)) </p>
 <p>Chúc các bạn chơi game vui vẻ </p>
 <p>Powered by: Nguyễn Duy Ngọc </p>
 </body>
