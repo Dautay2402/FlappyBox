@@ -86,8 +86,20 @@ function component(width, height, color, x, y, type) {
         var othertop = otherobj.y;
         var otherbottom = otherobj.y + (otherobj.height);
         var crash = true;
+        var rockbottom = myGameArea.canvas.height - this.height;
+        var rocktop =  myGameArea.canvas.height - this.y - this.height;
+        
         if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
             crash = false;
+        }
+        if (this.y > rockbottom) {
+            crash = true;
+        }
+        if (this.y==0) {
+            crash = true;
+        }
+        if (this.x + (this.width)==0){
+            crash= true;
         }
         return crash;
     }
